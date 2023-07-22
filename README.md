@@ -138,6 +138,12 @@ lines, in this case conditions. You can also use it in actions section.<br>
     <a href="https://alonsoaliaga.com/capitalize">Capitalize Expansion</a><br>
     Customize texts a bit more removing underscores, dashes and capitalizing letters!<br>
     <br>
+    <a href="https://alonsoaliaga.com/playerutils">PlayerUtils Expansion</a><br>
+    Access to detailed information of your players like health/food/armor bar and more!<br>
+    <br>
+    <a href="https://alonsoaliaga.com/number">Number Expansion</a><br>
+    Modify your input numbers easily to use them wherever you need it!<br>
+    <br>
     <a href="https://alonsoaliaga.com/checkmoney">CheckMoney Expansion</a><br>
     Check if player has enough funds or not with custom output! (Specially for menu plugins)<br>
     <br>
