@@ -1,6 +1,7 @@
 PlaceholderAPI expansion to generate data for temporary access using placeholders.
 # TempData-Expansion
 This is a [PlaceholderAPI](https://links.alonsoaliaga.com/PlaceholderAPI) expansion to let owners store temporary data to use.
+**DATA DOES NOT PERSIST AFTER RESTART, DATA IS NOT SAVED IN DATABASE OR FILE. DATA IS TEMPORARY!**
 
 # Installation
 You can install this expansion in 2 ways:
@@ -24,18 +25,18 @@ under the specified `IDENTIFIER` until it's overwritten.<br>
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
 If %placeholder% is required you can use `<percent>` as if it was `%`.<br>
 <br>
-The example requires [RNG](https://api.extendedclip.com/expansions/rng/) expansion to generate a random number.<br>
-**Example:** %tempdata_playerset_arandomnumber_{rng_1_5}%<br>
+The example requires [Number](https://api.extendedclip.com/expansions/number/) expansion to generate a random number.<br>
+**Example:** %tempdata_playerset_arandomnumber_{number_random_1_5}%<br>
 **Output:** `3` #This is a random generated number stored for player with identifier `arandomnumber`.
 
-## %tempdata_playerget_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
+## %tempdata_playerget_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_IF_NOT_SET}%
 Allows you to get the temporary data previously stored under the specified `IDENTIFIER`.<br>
 If not available, returns result data from `{TEXT_OR_PLACEHOLDER_TO_STORE}` part for the player.<br>
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
 If %placeholder% is required you can use `<percent>` as if it was `%`.<br>
 <br>
-The example requires [RNG](https://api.extendedclip.com/expansions/rng/) expansion to generate a random number.<br>
-**Example:** %tempdata_playerget_arandomnumber_{rng_1_5}%<br>
+The example requires [Number](https://api.extendedclip.com/expansions/number/) expansion to generate a random number.<br>
+**Example:** %tempdata_playerget_arandomnumber_{number_random_1_5}%<br>
 **Output:** `3` #This is the value stored for player with identifier `arandomnumber`.
 
 ## %tempdata_playergetorset_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
@@ -45,8 +46,8 @@ part for the player<br>
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
 If %placeholder% is required you can use `<percent>` as if it was `%`.<br>
 <br>
-The example requires [RNG](https://api.extendedclip.com/expansions/rng/) expansion to generate a random number.<br>
-**Example:** %tempdata_playergetorset_arandomnumber_{rng_1_5}%<br>
+The example requires [Number](https://api.extendedclip.com/expansions/number/) expansion to generate a random number.<br>
+**Example:** %tempdata_playergetorset_arandomnumber_{number_random_1_5}%<br>
 **Output:** `2` #This is a random generated number stored for player with identifier `arandomnumber`.
 
 ## %tempdata_globalset_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
@@ -55,8 +56,8 @@ under the specified `IDENTIFIER` until it's overwritten.<br>
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
 If %placeholder% is required you can use `<percent>` as if it was `%`.<br>
 <br>
-The example requires [RNG](https://api.extendedclip.com/expansions/rng/) expansion to generate a random number.<br>
-**Example:** %tempdata_globalset_arandomnumber_{rng_1_5}%<br>
+The example requires [Number](https://api.extendedclip.com/expansions/number/) expansion to generate a random number.<br>
+**Example:** %tempdata_globalset_arandomnumber_{number_random_1_5}%<br>
 **Output:** `4` #This is a random generated number stored in global context with identifier `arandomnumber`.
 
 ## %tempdata_globalget_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
@@ -65,8 +66,8 @@ If not available, returns result data from `{TEXT_OR_PLACEHOLDER_TO_STORE}` part
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
 If %placeholder% is required you can use `<percent>` as if it was `%`.<br>
 <br>
-The example requires [RNG](https://api.extendedclip.com/expansions/rng/) expansion to generate a random number.<br>
-**Example:** %tempdata_playerget_arandomnumber_{rng_1_5}%<br>
+The example requires [Number](https://api.extendedclip.com/expansions/number/) expansion to generate a random number.<br>
+**Example:** %tempdata_playerget_arandomnumber_{number_random_1_5}%<br>
 **Output:** `4` #This is the value stored in global context with identifier `arandomnumber`.
 
 ## %tempdata_globalgetorset_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
@@ -76,8 +77,8 @@ If not available, stores a new record and returns result data from `{TEXT_OR_PLA
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
 If %placeholder% is required you can use `<percent>` as if it was `%`.<br>
 <br>
-The example requires [RNG](https://api.extendedclip.com/expansions/rng/) expansion to generate a random number.<br>
-**Example:** %tempdata_globalgetorset_arandomnumber_{rng_1_5}%<br>
+The example requires [Number](https://api.extendedclip.com/expansions/number/) expansion to generate a random number.<br>
+**Example:** %tempdata_globalgetorset_arandomnumber_{number_random_1_5}%<br>
 **Output:** `1` #This is a random generated number stored in global context with identifier `arandomnumber`.
 
 # How is this useful?
@@ -93,25 +94,25 @@ occurs with specific chances, sadly if you set the conditions to something like:
   - "%random_1_5% == 5 execute actionfor5"
 ```
 It will create a new random number between 1 and 5 every time it's checked. Which is not what we want!<br>
-This example requires the PlaceholderAPI expansion called [RNG](https://api.extendedclip.com/expansions/rng/).<br>
+This example requires the PlaceholderAPI expansion called [Number](https://api.extendedclip.com/expansions/number/).<br>
 How to use TempData-Expansion to solve this issue? We simply modify our previous code like:
 ```yaml
   conditions:
-  - "%tempdata_playerset_arandomnumber_{rng_1_5}% == 1 execute actionfor1"
-  - "%tempdata_playerget_arandomnumber_{rng_1_5}% == 2 execute actionfor2"
-  - "%tempdata_playerget_arandomnumber_{rng_1_5}% == 3 execute actionfor3"
-  - "%tempdata_playerget_arandomnumber_{rng_1_5}% == 4 execute actionfor4"
-  - "%tempdata_playerget_arandomnumber_{rng_1_5}% == 5 execute actionfor5"
+  - "%tempdata_playerset_arandomnumber_{number_random_1_5}% == 1 execute actionfor1"
+  - "%tempdata_playerget_arandomnumber_{number_random_1_5}% == 2 execute actionfor2"
+  - "%tempdata_playerget_arandomnumber_{number_random_1_5}% == 3 execute actionfor3"
+  - "%tempdata_playerget_arandomnumber_{number_random_1_5}% == 4 execute actionfor4"
+  - "%tempdata_playerget_arandomnumber_{number_random_1_5}% == 5 execute actionfor5"
   actions:
     actionfor1:
-    - "message: &eThe selected random number was &a%tempdata_playerget_arandomnumber_{rng_1_5}%&e!"
+    - "message: &eThe selected random number was &a%tempdata_playerget_arandomnumber_{number_random_1_5}%&e!"
 ```
 Another example:
 ```yaml
   conditions:
-  - "%tempdata_playerset_arandomchance_{rng_0_100}% <= 5 execute actionlessthan5"
-  - "%tempdata_playerget_arandomchance_{rng_0_100}% <= 15 execute actionlessthan15"
-  - "%tempdata_playerget_arandomchance_{rng_0_100}% <= 30 execute actionlessthan30"
+  - "%tempdata_playerset_arandomchance_{number_random_0_100}% <= 5 execute actionlessthan5"
+  - "%tempdata_playerget_arandomchance_{number_random_0_100}% <= 15 execute actionlessthan15"
+  - "%tempdata_playerget_arandomchance_{number_random_0_100}% <= 30 execute actionlessthan30"
   actions:
     actionlessthan5:
     - "message: &eYou have received a &6Legendary &ereward with a probability &aless than 5%&e!"
