@@ -19,7 +19,7 @@ Copy and paste the file in `/plugins/PlaceholderAPI/expansions/` and run:
 ✅ Expansion is ready to be used!
 # Placeholders
 The following placeholders are available:
-## %tempdata_playerset_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
+## %tempdata_playerset_&lt;IDENTIFIER&gt;\_{VALUE_TO_STORE}%
 Allows you to save the result data from `{TEXT_OR_PLACEHOLDER_TO_STORE}` part for the player<br>
 under the specified `IDENTIFIER` until it's overwritten.<br>
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
@@ -29,7 +29,7 @@ The example requires [Number](https://api.extendedclip.com/expansions/number/) e
 **Example:** %tempdata_playerset_arandomnumber_{number_random_1_5}%<br>
 **Output:** `3` #This is a random generated number stored for player with identifier `arandomnumber`.
 
-## %tempdata_playerget_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_IF_NOT_SET}%
+## %tempdata_playerget_&lt;IDENTIFIER&gt;\_{VALUE_IF_NOT_SET}%
 Allows you to get the temporary data previously stored under the specified `IDENTIFIER`.<br>
 If not available, returns result data from `{TEXT_OR_PLACEHOLDER_TO_STORE}` part for the player.<br>
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
@@ -39,7 +39,7 @@ The example requires [Number](https://api.extendedclip.com/expansions/number/) e
 **Example:** %tempdata_playerget_arandomnumber_{number_random_1_5}%<br>
 **Output:** `3` #This is the value stored for player with identifier `arandomnumber`.
 
-## %tempdata_playergetorset_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
+## %tempdata_playergetorset_&lt;IDENTIFIER&gt;\_{VALUE_TO_RETURN_AND_STORE}%
 Allows you to get the result data previously stored under the specified `IDENTIFIER`.<br>
 If not available, stores a new record and returns result data from `{TEXT_OR_PLACEHOLDER_TO_STORE}`<br>
 part for the player<br>
@@ -50,7 +50,7 @@ The example requires [Number](https://api.extendedclip.com/expansions/number/) e
 **Example:** %tempdata_playergetorset_arandomnumber_{number_random_1_5}%<br>
 **Output:** `2` #This is a random generated number stored for player with identifier `arandomnumber`.
 
-## %tempdata_globalset_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
+## %tempdata_globalset_&lt;IDENTIFIER&gt;\_{VALUE_TO_STORE}%
 Allows you to save the result data from `{TEXT_OR_PLACEHOLDER_TO_STORE}` part as global data<br>
 under the specified `IDENTIFIER` until it's overwritten.<br>
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
@@ -60,7 +60,7 @@ The example requires [Number](https://api.extendedclip.com/expansions/number/) e
 **Example:** %tempdata_globalset_arandomnumber_{number_random_1_5}%<br>
 **Output:** `4` #This is a random generated number stored in global context with identifier `arandomnumber`.
 
-## %tempdata_globalget_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
+## %tempdata_globalget_&lt;IDENTIFIER&gt;\_{VALUE_IF_NOT_SET}%
 Allows you to get the temporary data previously stored under the specified `IDENTIFIER`.<br>
 If not available, returns result data from `{TEXT_OR_PLACEHOLDER_TO_STORE}` part.<br>
 Supports PlaceholderAPI but requires `{ }` instead of `% %`.<br>
@@ -70,7 +70,7 @@ The example requires [Number](https://api.extendedclip.com/expansions/number/) e
 **Example:** %tempdata_playerget_arandomnumber_{number_random_1_5}%<br>
 **Output:** `4` #This is the value stored in global context with identifier `arandomnumber`.
 
-## %tempdata_globalgetorset_&lt;IDENTIFIER&gt;\_{TEXT_OR_PLACEHOLDER_TO_STORE}%
+## %tempdata_globalgetorset_&lt;IDENTIFIER&gt;\_{VALUE_TO_RETURN_AND_STORE}%
 Allows you to get the temporary data previously stored under the specified `IDENTIFIER`.<br>
 If not available, stores a new record and returns result data from `{TEXT_OR_PLACEHOLDER_TO_STORE}` part.<br>
 <br>
